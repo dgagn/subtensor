@@ -6,49 +6,49 @@ use codec::Compact;
 
 #[derive(Decode, Encode, PartialEq, Eq, Clone, Debug)]
 pub struct NeuronInfo<T: Config> {
-    hotkey: T::AccountId,
-    coldkey: T::AccountId,
-    uid: Compact<u16>,
-    netuid: Compact<u16>,
-    active: bool,
-    axon_info: AxonInfo,
-    prometheus_info: PrometheusInfo,
-    stake: Vec<(T::AccountId, Compact<u64>)>, // map of coldkey to stake on this neuron/hotkey (includes delegations)
-    rank: Compact<u16>,
-    emission: Compact<u64>,
-    incentive: Compact<u16>,
-    consensus: Compact<u16>,
-    trust: Compact<u16>,
-    validator_trust: Compact<u16>,
-    dividends: Compact<u16>,
-    last_update: Compact<u64>,
-    validator_permit: bool,
-    weights: Vec<(Compact<u16>, Compact<u16>)>, // Vec of (uid, weight)
-    bonds: Vec<(Compact<u16>, Compact<u16>)>,   // Vec of (uid, bond)
-    pruning_score: Compact<u16>,
+    pub hotkey: T::AccountId,
+    pub coldkey: T::AccountId,
+    pub uid: Compact<u16>,
+    pub netuid: Compact<u16>,
+    pub active: bool,
+    pub axon_info: AxonInfo,
+    pub prometheus_info: PrometheusInfo,
+    pub stake: Vec<(T::AccountId, Compact<u64>)>, // map of coldkey to stake on this neuron/hotkey (includes delegations)
+    pub rank: Compact<u16>,
+    pub emission: Compact<u64>,
+    pub incentive: Compact<u16>,
+    pub consensus: Compact<u16>,
+    pub trust: Compact<u16>,
+    pub validator_trust: Compact<u16>,
+    pub dividends: Compact<u16>,
+    pub last_update: Compact<u64>,
+    pub validator_permit: bool,
+    pub weights: Vec<(Compact<u16>, Compact<u16>)>, // Vec of (uid, weight)
+    pub bonds: Vec<(Compact<u16>, Compact<u16>)>,   // Vec of (uid, bond)
+    pub pruning_score: Compact<u16>,
 }
 
 #[derive(Decode, Encode, PartialEq, Eq, Clone, Debug)]
 pub struct NeuronInfoLite<T: Config> {
-    hotkey: T::AccountId,
-    coldkey: T::AccountId,
-    uid: Compact<u16>,
-    netuid: Compact<u16>,
-    active: bool,
-    axon_info: AxonInfo,
-    prometheus_info: PrometheusInfo,
-    stake: Vec<(T::AccountId, Compact<u64>)>, // map of coldkey to stake on this neuron/hotkey (includes delegations)
-    rank: Compact<u16>,
-    emission: Compact<u64>,
-    incentive: Compact<u16>,
-    consensus: Compact<u16>,
-    trust: Compact<u16>,
-    validator_trust: Compact<u16>,
-    dividends: Compact<u16>,
-    last_update: Compact<u64>,
-    validator_permit: bool,
+    pub hotkey: T::AccountId,
+    pub coldkey: T::AccountId,
+    pub uid: Compact<u16>,
+    pub netuid: Compact<u16>,
+    pub active: bool,
+    pub axon_info: AxonInfo,
+    pub prometheus_info: PrometheusInfo,
+    pub stake: Vec<(T::AccountId, Compact<u64>)>, // map of coldkey to stake on this neuron/hotkey (includes delegations)
+    pub rank: Compact<u16>,
+    pub emission: Compact<u64>,
+    pub incentive: Compact<u16>,
+    pub consensus: Compact<u16>,
+    pub trust: Compact<u16>,
+    pub validator_trust: Compact<u16>,
+    pub dividends: Compact<u16>,
+    pub last_update: Compact<u64>,
+    pub validator_permit: bool,
     // has no weights or bonds
-    pruning_score: Compact<u16>,
+    pub pruning_score: Compact<u16>,
 }
 
 impl<T: Config> Pallet<T> {
