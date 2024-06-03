@@ -812,7 +812,7 @@ pub mod pallet {
     }
 
     #[pallet::storage] // --- DMAP ( netuid, hotkey ) --> uid
-    pub(super) type Uids<T: Config> =
+    pub type Uids<T: Config> =
         StorageDoubleMap<_, Identity, u16, Blake2_128Concat, T::AccountId, u16, OptionQuery>;
     #[pallet::storage] // --- DMAP ( netuid, uid ) --> hotkey
     pub(super) type Keys<T: Config> =
